@@ -18,7 +18,7 @@ require 'functions.php';
 <title>Daftar Mahasiswa</title>
 </head>
 <body>
-<div style="display: flex; justify-content: space-between; align-items: left;">
+<div style="align: left; margin-bottom: 20px">
     <h3>Daftar Mahasiswa</h3>
     <a href="logout.php" style="color: red; text-decoration: none; font-weight: bold;">Logout</a>
 </div>
