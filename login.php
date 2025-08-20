@@ -43,7 +43,7 @@ autocomplete="off" required>
 </ul>
 </form>
 
-<div style="margin-top: 20px; text-align: center;">
+<div style="margin-top: 20px; text-align: left;">
     <p>Belum punya akun? <a href="registrasi.php" style="color: blue; text-decoration: underline;">Daftar di sini</a></p>
 </div>
 </body>
