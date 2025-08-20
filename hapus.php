@@ -1,5 +1,19 @@
 <?php
+session_start();
+
+// Cek apakah user sudah login
+if (!isset($_SESSION['login'])) {
+    header('Location: login.php');
+    exit;
+}
+
 require 'functions.php';
+
+// Cek apakah ID ada di URL
+if (!isset($_GET['id'])) {
+    header('Location: index.php');
+    exit;
+}
 
 //ambil id dari url
 $id = $_GET['id'];

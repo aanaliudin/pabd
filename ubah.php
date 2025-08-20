@@ -1,4 +1,12 @@
 <?php
+session_start();
+
+// Cek apakah user sudah login
+if (!isset($_SESSION['login'])) {
+    header('Location: login.php');
+    exit;
+}
+
 require 'functions.php';
 
 // Cek apakah ID ada di URL
@@ -86,6 +94,8 @@ Gambar :
 </li>
 </ul>
 </form>
+<br>
+<a href="index.php" style="text-decoration: none; color: #007bff;">← Kembali ke Daftar Mahasiswa</a>
 </body>
 <script>
 // Image preview function

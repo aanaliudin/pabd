@@ -1,4 +1,12 @@
 <?php
+session_start();
+
+// Cek apakah user sudah login
+if (!isset($_SESSION['login'])) {
+    header('Location: login.php');
+    exit;
+}
+
 require 'functions.php';
 //cek apaah tombol tambah sudah di klik
 if (isset($_POST['tambah'])) {
@@ -58,7 +66,8 @@ Gambar :
 </li>
 </ul>
 </form>
-<a href="index.php">Kembali ke Daftar Mahasiswa</a>
+<br>
+<a href="index.php" style="text-decoration: none; color: #007bff;">← Kembali ke Daftar Mahasiswa</a>
 </body>
 <script>
 // Image preview function

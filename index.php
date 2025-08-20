@@ -1,4 +1,12 @@
 <?php
+session_start();
+
+// Cek apakah user sudah login
+if (!isset($_SESSION['login'])) {
+    header('Location: login.php');
+    exit;
+}
+
 require 'functions.php';
 ?>
 <!DOCTYPE html>
@@ -10,7 +18,10 @@ require 'functions.php';
 <title>Daftar Mahasiswa</title>
 </head>
 <body>
-<h3>Daftar Mahasiswa</h3>
+<div style="display: flex; justify-content: space-between; align-items: center;">
+    <h3>Daftar Mahasiswa</h3>
+    <a href="logout.php" style="color: red; text-decoration: none; font-weight: bold;">Logout</a>
+</div>
 <a href="tambah.php">Tambah Data Mahasiswa</a>
 <br><br>
 <form action="" method="POST">

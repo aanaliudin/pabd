@@ -1,4 +1,8 @@
 <?php
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
 function koneksi()
 {
     return mysqli_connect('localhost', 'root', '123456', 'pabd');
@@ -141,16 +145,21 @@ function login($data)
     $conn = koneksi();
     $username = htmlspecialchars($data['username']);
     $password = htmlspecialchars($data['password']);
-    if (query("SELECT * FROM user WHERE username = '$username' && password =
-    '$password'")) {
+    
+    // Cari user berdasarkan username
+    $user = query("SELECT * FROM user WHERE username = '$username'");
+    
+    // Cek apakah user ditemukan dan password benar
+    if ($user && password_verify($password, $user[0]['password'])) {
         //set session
         $_SESSION['login'] = true;
+        $_SESSION['username'] = $username;
         header("Location: index.php");
         exit;
     } else {
         return [
-        'error' => true,
-        'pesan' => 'Username / Password Salah!'
+            'error' => true,
+            'pesan' => 'Username / Password Salah!'
         ];
     }
 }

@@ -15,7 +15,7 @@ $login = login($_POST);
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Document</title>
+<title>Login - PABD</title>
 </head>
 <body>
 <h3>Form Login</h3>
@@ -42,5 +42,9 @@ autocomplete="off" required>
 </li>
 </ul>
 </form>
+
+<div style="margin-top: 20px; text-align: center;">
+    <p>Belum punya akun? <a href="registrasi.php" style="color: blue; text-decoration: underline;">Daftar di sini</a></p>
+</div>
 </body>
 </html>
